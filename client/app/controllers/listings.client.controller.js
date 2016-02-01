@@ -80,6 +80,9 @@ angular.module('listings').controller('ListingsController', ['$scope', '$locatio
         occurs, pass it to $scope.error. 
       */
 
+      var id = $stateParams.listingId;
+
+
       if (!isValid) {
         $scope.$broadcast('show-errors-check-validity', 'articleForm');
 
@@ -111,6 +114,9 @@ angular.module('listings').controller('ListingsController', ['$scope', '$locatio
         Implement the remove function. If the removal is successful, navigate back to 'listing.list'. Otherwise, 
         display the error. 
        */
+
+      var id = $stateParams.listingId;
+
 
       Listings.delete(id)
         .then(function(response) {
