@@ -82,7 +82,6 @@ angular.module('listings').controller('ListingsController', ['$scope', '$locatio
 
       var id = $stateParams.listingId;
 
-
       if (!isValid) {
         $scope.$broadcast('show-errors-check-validity', 'articleForm');
 
@@ -96,7 +95,7 @@ angular.module('listings').controller('ListingsController', ['$scope', '$locatio
       };
 
       /* Save the article using the Listings factory */
-      Listings.update(id,listing)
+      Listings.update(id, $scope.listing)
               .then(function(response) {
                 //if the object is successfully saved redirect back to the list page
                 $state.go('listings.list', { successMessage: 'Listing succesfully updated!' });
